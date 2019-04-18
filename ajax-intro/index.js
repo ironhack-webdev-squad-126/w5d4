@@ -1,3 +1,6 @@
+/*
+// using XHR
+
 const xhttp = new XMLHttpRequest();
 
 xhttp.onreadystatechange = () => {
@@ -14,6 +17,27 @@ const searchForMovie = title => {
   xhttp.open('GET', `http://www.omdbapi.com/?apikey=c5817894&t=${title}`);
   xhttp.send();
 };
+*/
+/*
+// using Axios
+
+const searchForMovie = title => {
+  axios
+    .get(`http://www.omdbapi.com/?apikey=c5817894&t=${title}`)
+    .then(response => {
+      const { data } = response;
+      const { Title, Plot, imdbRating } = data;
+      document.getElementById('movie-title').innerText = Title;
+      document.getElementById('movie-plot').innerText = Plot;
+      document.getElementById('movie-rating').innerText = imdbRating;
+    })
+    .catch(err => {
+      console.error(err);
+    });
+};
+*/
+
+// using Fetch
 
 document.getElementById('searchButton').onclick = () => {
   const { value } = document.getElementById('movie-input');
