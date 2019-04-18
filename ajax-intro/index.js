@@ -39,6 +39,20 @@ const searchForMovie = title => {
 
 // using Fetch
 
+const searchForMovie = title => {
+  fetch(`http://www.omdbapi.com/?apikey=c5817894&t=${title}`)
+    .then(response => response.json())
+    .then(data => {
+      const { Title, Plot, imdbRating } = data;
+      document.getElementById('movie-title').innerText = Title;
+      document.getElementById('movie-plot').innerText = Plot;
+      document.getElementById('movie-rating').innerText = imdbRating;
+    })
+    .catch(err => {
+      console.error(err);
+    });
+};
+
 document.getElementById('searchButton').onclick = () => {
   const { value } = document.getElementById('movie-input');
   searchForMovie(value);
