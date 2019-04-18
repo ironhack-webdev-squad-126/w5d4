@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>AJAX Advanced</title>
+  </head>
+  <body>
+    <form id="character-form">
+      <label for="name-input">Name</label>
+      <input required type="text" name="name-input" id="name-input" />
+      <label for="occupation-input">Occupation</label>
+      <input
+        required
+        type="text"
+        name="occupation-input"
+        id="occupation-input"
+      />
+      <label for="location-input">Location</label>
+      <input required type="text" name="location-input" id="location-input" />
+      <button>Create</button>
+    </form>
+    <form id="update-form">
+      <label for="name-update">Name</label>
+      <input required type="text" name="name-update" id="name-update" />
+      <label for="occupation-update">Occupation</label>
+      <input
+        required
+        type="text"
+        name="occupation-update"
+        id="occupation-update"
+      />
+      <label for="location-update">Location</label>
+      <input required type="text" name="location-update" id="location-update" />
+      <label for="id-update">ID</label>
+      <input type="text" name="id-update" id="id-update" />
+      <button>Update</button>
+    </form>
+    <ul id="characters-list"></ul>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
